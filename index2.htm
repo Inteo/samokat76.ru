@@ -15,7 +15,6 @@
   <![endif]-->
   <link rel="stylesheet" href="f/css/main.css">
   <script src="f/js/jquery-1.11.3.min.js"></script>
-  <script src="f/js/stickyfill.min.js"></script>
   <script src="f/js/common.js"></script>
   <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
   <script>
@@ -24,8 +23,22 @@
     });
   </script>
 </head>
-<body class="clearfix">
-  <div class="main clearfix">
+<body>
+  <div class="header">
+    <div class="header__ham">
+      <a href="#">&nbsp;</a>
+    </div>
+    <a href="/" class="logo">
+      <img src="f/i/logo.png" alt="">
+    </a>
+    <div class="callback">
+      <p class="callback__num">
+        <span>(4852)</span>
+        333-553
+      </p>
+    </div>
+  </div>
+  <div class="main">
     <div class="main__holder">
       <a href="/" class="logo">
       <img src="f/i/logo.png" alt="">
@@ -51,27 +64,41 @@
       </p>
     </div>
   </div>
-  <div class="wrap clearfix">
-    <div class="header">
-      <div class="header__ham">
-        <a href="#">&nbsp;</a>
-      </div>
-      <a href="/" class="logo">
-        <img src="f/i/logo.png" alt="">
-      </a>
-      <div class="callback">
-        <p class="callback__num">
-          <span>(4852)</span>
-          333-553
-        </p>
-      </div>
-    </div>
+  <div class="wrap">
     <div class="back"><img src="f/i/back/1.jpg" alt=""></div>
     <div class="holder">
       <h1 class="main-title">«автопрокат САМОКАТ» в Ярославле</h1>
       <div class="content">
         <p class="content__title">Автомобили</p>
-        
+        <div class="catalog">
+          <div class="catalog__item">
+            <p class="catalog__name">Renault Duster</p>
+            <p class="catalog__detail">2,0 АКПП 4х4, кондиционер, МР3</p>
+            <p class="catalog__price">от 2500 ₽</p>
+            <div class="catalog__btn">
+              <a href="#" class="btn">Заказать автомобиль</a>
+            </div>
+            <img src="f/i/catalog/1.jpg" alt="">
+          </div>
+          <div class="catalog__item">
+            <p class="catalog__name">Ford Focus</p>
+            <p class="catalog__detail">1,6 АКПП6, кондиционер, МР3</p>
+            <p class="catalog__price">от 1900 ₽</p>
+            <div class="catalog__btn">
+              <a href="#" class="btn">Заказать автомобиль</a>
+            </div>
+            <img src="f/i/catalog/2.jpg" alt="">
+          </div>
+          <div class="catalog__item">
+            <p class="catalog__name">Lada Largus</p>
+            <p class="catalog__detail">МКПП, кондиционер, АВС, 2 подушки безопасности, эл/пакет, МР3</p>
+            <p class="catalog__price">от 2500 ₽</p>
+            <div class="catalog__btn">
+              <a href="#" class="btn">Заказать автомобиль</a>
+            </div>
+            <img src="f/i/catalog/3.jpg" alt="">
+          </div>
+        </div>
       </div>
       <div class="callback">
         <p class="callback__num">
