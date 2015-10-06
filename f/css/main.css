@@ -639,12 +639,12 @@ input[type='checkbox']:checked + label::after {
   -ms-user-select: none;
   user-select: none;
   border-radius: 15px;
-  background: -moz-linear-gradient(bottom, #cf5832 0%, #df8c44 100%);
-  background: -webkit-gradient(bottom top, bottom top, color-stop(0%, #cf5832), color-stop(100%, #df8b44));
-  background: -webkit-linear-gradient(bottom, #cf5832 0%, #df8b44 100%);
-  background: -o-linear-gradient(bottom, #cf5832 0%, #df8b44 100%);
-  background: -ms-linear-gradient(bottom, #cf5832 0%, #df8b44 100%);
-  background: linear-gradient(to top, #cf5832 0%, #df8b44 100%);
+  background: -moz-linear-gradient(bottom, #ec572b 0%, #f88d3c 100%);
+  background: -webkit-gradient(bottom top, bottom top, color-stop(0%, #ec572b), color-stop(100%, #f88d3c));
+  background: -webkit-linear-gradient(bottom, #ec572b 0%, #f88d3c 100%);
+  background: -o-linear-gradient(bottom, #ec572b 0%, #f88d3c 100%);
+  background: -ms-linear-gradient(bottom, #ec572b 0%, #f88d3c 100%);
+  background: linear-gradient(to top, #ec572b 0%, #f88d3c 100%);
   -webkit-box-shadow: 0 1px 2px 0 #000;
   -moz-box-shadow: 0 1px 2px 0 #000;
   box-shadow: 0 1px 2px 0 #000;
@@ -678,12 +678,12 @@ input[type='checkbox']:checked + label::after {
   -webkit-box-shadow: 0 3px 4px 0 rgba(12, 14, 16, 0.7) inset;
   -moz-box-shadow: 0 3px 4px 0 rgba(12, 14, 16, 0.7) inset;
   box-shadow: 0 3px 4px 0 rgba(12, 14, 16, 0.7) inset;
-  background: -moz-linear-gradient(bottom, #cf5832 0%, #df8c44 100%);
-  background: -webkit-gradient(bottom top, bottom top, color-stop(0%, #cf5832), color-stop(100%, #df8b44));
-  background: -webkit-linear-gradient(bottom, #cf5832 0%, #df8b44 100%);
-  background: -o-linear-gradient(bottom, #cf5832 0%, #df8b44 100%);
-  background: -ms-linear-gradient(bottom, #cf5832 0%, #df8b44 100%);
-  background: linear-gradient(to top, #cf5832 0%, #df8b44 100%);
+  background: -moz-linear-gradient(bottom, #ec572b 0%, #f88d3c 100%);
+  background: -webkit-gradient(bottom top, bottom top, color-stop(0%, #ec572b), color-stop(100%, #f88d3c));
+  background: -webkit-linear-gradient(bottom, #ec572b 0%, #f88d3c 100%);
+  background: -o-linear-gradient(bottom, #ec572b 0%, #f88d3c 100%);
+  background: -ms-linear-gradient(bottom, #ec572b 0%, #f88d3c 100%);
+  background: linear-gradient(to top, #ec572b 0%, #f88d3c 100%);
 }
 .btn:focus,
 .btn:active:focus,
@@ -3881,14 +3881,17 @@ button.close {
 @media (max-width: 991px) {
   .main {
     overflow: hidden;
-    top: 90px;
-    max-width: 0;
-    padding-top: 30px;
-    -webkit-transition: max-width 0.5s ease;
-    -moz-transition: max-width 0.5s ease;
-    -o-transition: max-width 0.5s ease;
-    -ms-transition: max-width 0.5s ease;
-    transition: max-width 0.5s ease;
+    max-height: 0;
+    width: 100%;
+    -webkit-transition: max-height 0 linear;
+    -moz-transition: max-height 0 linear;
+    -o-transition: max-height 0 linear;
+    -ms-transition: max-height 0 linear;
+    transition: max-height 0 linear;
+  }
+  .main__holder {
+    width: 100%;
+    height: auto;
   }
   .main:after {
     content: '';
@@ -3906,7 +3909,23 @@ button.close {
   }
 }
 .main_active {
-  max-width: 210px;
+  max-height: 100%;
+  position: relative;
+  height: auto;
+  padding-top: 10px;
+  -webkit-transition: max-height 0.7s ease;
+  -moz-transition: max-height 0.7s ease;
+  -o-transition: max-height 0.7s ease;
+  -ms-transition: max-height 0.7s ease;
+  transition: max-height 0.7s ease;
+}
+@media (max-width: 479px) {
+  .main_active {
+    padding-top: 30px;
+  }
+}
+.main_active:before {
+  display: none;
 }
 @media (max-width: 991px) {
   .main .logo {
@@ -3945,7 +3964,7 @@ button.close {
 }
 @media (max-width: 991px) {
   .main__copyright {
-    bottom: 90px;
+    display: none;
   }
 }
 .main .callback {
@@ -4024,12 +4043,12 @@ button.close {
   left: 0;
   top: 0;
   opacity: .2;
-  background: -moz-linear-gradient(left, #d76744 0%, #df8b44 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, #d76744), color-stop(100%, #df8b44));
-  background: -webkit-linear-gradient(left, #d76744 0%, #df8b44 100%);
-  background: -o-linear-gradient(left, #d76744 0%, #df8b44 100%);
-  background: -ms-linear-gradient(left, #d76744 0%, #df8b44 100%);
-  background: linear-gradient(to right, #d76744 0%, #df8b44 100%);
+  background: -moz-linear-gradient(left, #f46840 0%, #f88d3c 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, #f46840), color-stop(100%, #f88d3c));
+  background: -webkit-linear-gradient(left, #f46840 0%, #f88d3c 100%);
+  background: -o-linear-gradient(left, #f46840 0%, #f88d3c 100%);
+  background: -ms-linear-gradient(left, #f46840 0%, #f88d3c 100%);
+  background: linear-gradient(to right, #f46840 0%, #f88d3c 100%);
 }
 .main-menu__item_active a:before,
 .main-menu__item_active p:before {
@@ -4040,12 +4059,12 @@ button.close {
   position: absolute;
   left: 0;
   top: 0;
-  background: -moz-linear-gradient(left, #d76744 0%, #df8b44 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, #d76744), color-stop(100%, #df8b44));
-  background: -webkit-linear-gradient(left, #d76744 0%, #df8b44 100%);
-  background: -o-linear-gradient(left, #d76744 0%, #df8b44 100%);
-  background: -ms-linear-gradient(left, #d76744 0%, #df8b44 100%);
-  background: linear-gradient(to right, #d76744 0%, #df8b44 100%);
+  background: -moz-linear-gradient(left, #f46840 0%, #f88d3c 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, #f46840), color-stop(100%, #f88d3c));
+  background: -webkit-linear-gradient(left, #f46840 0%, #f88d3c 100%);
+  background: -o-linear-gradient(left, #f46840 0%, #f88d3c 100%);
+  background: -ms-linear-gradient(left, #f46840 0%, #f88d3c 100%);
+  background: linear-gradient(to right, #f46840 0%, #f88d3c 100%);
 }
 .main-menu__item_active a:hover:before,
 .main-menu__item_active p:hover:before {
@@ -4063,6 +4082,7 @@ button.close {
 .back {
   position: fixed;
   z-index: -1;
+  top: 0;
 }
 .holder {
   padding: 75px 50px 50px;
@@ -4106,7 +4126,7 @@ button.close {
   position: absolute;
   content: '';
   border: 12px solid transparent;
-  border-top: 12px solid #cf5832;
+  border-top: 12px solid #ec572b;
   border-bottom: none;
   border-right: none;
   left: -12px;
@@ -4116,18 +4136,18 @@ button.close {
 .content__title:after {
   position: absolute;
   content: '';
-  background: #d76744;
+  background: #f46840;
   top: 0;
   width: 100%;
   height: 100%;
   left: -12px;
   z-index: -1;
-  background: -moz-linear-gradient(left, #cf5832 0%, #df8c44 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, #cf5832), color-stop(100%, #df8b44));
-  background: -webkit-linear-gradient(left, #cf5832 0%, #df8b44 100%);
-  background: -o-linear-gradient(left, #cf5832 0%, #df8b44 100%);
-  background: -ms-linear-gradient(left, #cf5832 0%, #df8b44 100%);
-  background: linear-gradient(to right, #cf5832 0%, #df8b44 100%);
+  background: -moz-linear-gradient(left, #ec572b 0%, #f88d3c 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, #ec572b), color-stop(100%, #f88d3c));
+  background: -webkit-linear-gradient(left, #ec572b 0%, #f88d3c 100%);
+  background: -o-linear-gradient(left, #ec572b 0%, #f88d3c 100%);
+  background: -ms-linear-gradient(left, #ec572b 0%, #f88d3c 100%);
+  background: linear-gradient(to right, #ec572b 0%, #f88d3c 100%);
   -webkit-box-shadow: 0 12px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   -moz-box-shadow: 0 12px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   box-shadow: 0 12px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
@@ -4292,7 +4312,7 @@ button.close {
   }
 }
 .preface__title-orange {
-  color: #d76744;
+  color: #f46840;
 }
 .preface__title-dotted {
   border: 1px dashed #000;
@@ -4363,12 +4383,9 @@ button.close {
   background: #303133;
   height: 90px;
   text-align: center;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  z-index: 10;
   padding: 20px 25px;
   display: none;
+  min-width: 320px;
 }
 @media (max-width: 991px) {
   .header {

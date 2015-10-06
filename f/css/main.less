@@ -639,12 +639,12 @@ input[type='checkbox']:checked + label::after {
       -ms-user-select: none;
           user-select: none;
   border-radius: 15px;
-  background: -moz-linear-gradient(bottom, #cf5832 0%, #df8c44 100%);
-  background: -webkit-gradient(bottom top, bottom top, color-stop(0%, #cf5832), color-stop(100%, #df8b44));
-  background: -webkit-linear-gradient(bottom, #cf5832 0%,  #df8b44 100%);
-  background: -o-linear-gradient(bottom, #cf5832 0%,  #df8b44 100%);
-  background: -ms-linear-gradient(bottom, #cf5832 0%,  #df8b44 100%);
-  background: linear-gradient(to top, #cf5832 0%,  #df8b44 100%);
+  background: -moz-linear-gradient(bottom, #ec572b 0%, #f88d3c 100%);
+  background: -webkit-gradient(bottom top, bottom top, color-stop(0%, #ec572b), color-stop(100%, #f88d3c));
+  background: -webkit-linear-gradient(bottom, #ec572b 0%,  #f88d3c 100%);
+  background: -o-linear-gradient(bottom, #ec572b 0%,  #f88d3c 100%);
+  background: -ms-linear-gradient(bottom, #ec572b 0%,  #f88d3c 100%);
+  background: linear-gradient(to top, #ec572b 0%,  #f88d3c 100%);
   -webkit-box-shadow: 0 1px 2px 0 #000;
   -moz-box-shadow: 0 1px 2px 0 #000;
   box-shadow: 0 1px 2px 0 #000;
@@ -673,12 +673,12 @@ input[type='checkbox']:checked + label::after {
     -webkit-box-shadow: 0 3px 4px 0 rgba(12, 14, 16, 0.7) inset;
     -moz-box-shadow: 0 3px 4px 0 rgba(12, 14, 16, 0.7) inset;
     box-shadow: 0 3px 4px 0 rgba(12, 14, 16, 0.7) inset;
-    background: -moz-linear-gradient(bottom, #cf5832 0%, #df8c44 100%);
-    background: -webkit-gradient(bottom top, bottom top, color-stop(0%, #cf5832), color-stop(100%, #df8b44));
-    background: -webkit-linear-gradient(bottom, #cf5832 0%,  #df8b44 100%);
-    background: -o-linear-gradient(bottom, #cf5832 0%,  #df8b44 100%);
-    background: -ms-linear-gradient(bottom, #cf5832 0%,  #df8b44 100%);
-    background: linear-gradient(to top, #cf5832 0%,  #df8b44 100%);
+    background: -moz-linear-gradient(bottom, #ec572b 0%, #f88d3c 100%);
+    background: -webkit-gradient(bottom top, bottom top, color-stop(0%, #ec572b), color-stop(100%, #f88d3c));
+    background: -webkit-linear-gradient(bottom, #ec572b 0%,  #f88d3c 100%);
+    background: -o-linear-gradient(bottom, #ec572b 0%,  #f88d3c 100%);
+    background: -ms-linear-gradient(bottom, #ec572b 0%,  #f88d3c 100%);
+    background: linear-gradient(to top, #ec572b 0%,  #f88d3c 100%);
   }
 }
 .btn:focus,
@@ -3811,7 +3811,7 @@ button.close {
   -ms-transition: @prop @time @ease;
   transition: @prop @time @ease;
 }
-@orange: #d76744;
+@orange: #f46840;
 
 @small: ~"(max-width: 1199px)";
 @tablet: ~"(max-width: 991px)";
@@ -3892,10 +3892,14 @@ button.close {
   }
   @media @tablet {
     overflow: hidden;
-    top: 90px;
-    max-width: 0;
-    padding-top: 30px;
-    .transition(max-width, .5s, ease);
+    max-height: 0;
+    width: 100%;
+    &__holder {
+      width: 100%;
+      height: auto;
+    }
+    
+    .transition(max-height, 0, linear);
     &:after {
       content: '';
       width: 100%;
@@ -3912,7 +3916,17 @@ button.close {
     }
   }
   &_active {
-    max-width: 210px;
+    max-height: 100%;
+    position: relative;
+    height: auto;
+    padding-top: 10px;
+    .transition(max-height, .7s, ease);
+    @media @old {
+      padding-top: 30px;
+    }
+    &:before {
+      display: none;
+    }
   }
   & .logo {
     @media @tablet {
@@ -3949,7 +3963,7 @@ button.close {
       text-decoration: underline;
     }
     @media @tablet {
-      bottom: 90px;
+      display: none;
     }
   }
   & .callback {
@@ -4018,12 +4032,12 @@ button.close {
           left: 0;
           top: 0;
           opacity: .2;
-          background: -moz-linear-gradient(left, @orange 0%, #df8b44 100%);
-          background: -webkit-gradient(left top, right top, color-stop(0%, @orange), color-stop(100%, #df8b44));
-          background: -webkit-linear-gradient(left, @orange 0%,  #df8b44 100%);
-          background: -o-linear-gradient(left, @orange 0%,  #df8b44 100%);
-          background: -ms-linear-gradient(left, @orange 0%,  #df8b44 100%);
-          background: linear-gradient(to right, @orange 0%,  #df8b44 100%);
+          background: -moz-linear-gradient(left, @orange 0%, #f88d3c 100%);
+          background: -webkit-gradient(left top, right top, color-stop(0%, @orange), color-stop(100%, #f88d3c));
+          background: -webkit-linear-gradient(left, @orange 0%,  #f88d3c 100%);
+          background: -o-linear-gradient(left, @orange 0%,  #f88d3c 100%);
+          background: -ms-linear-gradient(left, @orange 0%,  #f88d3c 100%);
+          background: linear-gradient(to right, @orange 0%,  #f88d3c 100%);
         }
       }
     }
@@ -4037,12 +4051,12 @@ button.close {
         position: absolute;
         left: 0;
         top: 0;
-        background: -moz-linear-gradient(left, @orange 0%, #df8b44 100%);
-        background: -webkit-gradient(left top, right top, color-stop(0%, @orange), color-stop(100%, #df8b44));
-        background: -webkit-linear-gradient(left, @orange 0%,  #df8b44 100%);
-        background: -o-linear-gradient(left, @orange 0%,  #df8b44 100%);
-        background: -ms-linear-gradient(left, @orange 0%,  #df8b44 100%);
-        background: linear-gradient(to right, @orange 0%,  #df8b44 100%);
+        background: -moz-linear-gradient(left, @orange 0%, #f88d3c 100%);
+        background: -webkit-gradient(left top, right top, color-stop(0%, @orange), color-stop(100%, #f88d3c));
+        background: -webkit-linear-gradient(left, @orange 0%,  #f88d3c 100%);
+        background: -o-linear-gradient(left, @orange 0%,  #f88d3c 100%);
+        background: -ms-linear-gradient(left, @orange 0%,  #f88d3c 100%);
+        background: linear-gradient(to right, @orange 0%,  #f88d3c 100%);
       }
       &:hover:before {
         opacity: 1;
@@ -4061,6 +4075,7 @@ button.close {
 .back {
   position: fixed;
   z-index: -1;
+  top: 0;
 }
 .holder {
   padding: 75px 50px 50px;
@@ -4096,7 +4111,7 @@ button.close {
       position: absolute;
       content: '';
       border: 12px solid transparent;
-      border-top: 12px solid #cf5832;
+      border-top: 12px solid #ec572b;
       border-bottom: none;
       border-right: none;
       left: -12px;
@@ -4112,12 +4127,12 @@ button.close {
       height: 100%;
       left: -12px;
       z-index: -1;
-      background: -moz-linear-gradient(left, #cf5832 0%, #df8c44 100%);
-      background: -webkit-gradient(left top, right top, color-stop(0%, #cf5832), color-stop(100%, #df8b44));
-      background: -webkit-linear-gradient(left, #cf5832 0%,  #df8b44 100%);
-      background: -o-linear-gradient(left, #cf5832 0%,  #df8b44 100%);
-      background: -ms-linear-gradient(left, #cf5832 0%,  #df8b44 100%);
-      background: linear-gradient(to right, #cf5832 0%,  #df8b44 100%);
+      background: -moz-linear-gradient(left, #ec572b 0%, #f88d3c 100%);
+      background: -webkit-gradient(left top, right top, color-stop(0%, #ec572b), color-stop(100%, #f88d3c));
+      background: -webkit-linear-gradient(left, #ec572b 0%,  #f88d3c 100%);
+      background: -o-linear-gradient(left, #ec572b 0%,  #f88d3c 100%);
+      background: -ms-linear-gradient(left, #ec572b 0%,  #f88d3c 100%);
+      background: linear-gradient(to right, #ec572b 0%,  #f88d3c 100%);
   
       -webkit-box-shadow: 0 12px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
       -moz-box-shadow: 0 12px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
@@ -4324,12 +4339,9 @@ button.close {
   background: #303133;
   height: 90px;
   text-align: center;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  z-index: 10;
   padding: 20px 25px;
   display: none;
+  min-width: 320px; 
   @media @tablet {
     display: block;
   }

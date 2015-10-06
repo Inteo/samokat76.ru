@@ -4,5 +4,5 @@ $(function(){
   })
 });
 $(document).ready(function(){
-	$(".header").Stickyfill();
+
 });
