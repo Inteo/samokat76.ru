@@ -3839,6 +3839,11 @@ button.close {
   content: '';
   background: url('../../f/i/icons.png') -9999px -9999px no-repeat;
 }
+.pseudo {
+  border-bottom: 1px dashed;
+  line-height: 20px;
+  display: inline-block;
+}
 .icon-car {
   width: 32px;
   height: 22px;
@@ -4085,6 +4090,7 @@ button.close {
   }
 }
 .content {
+  overflow: hidden;
   background: #fff;
   border-radius: 10px;
   max-width: 950px;
@@ -4444,8 +4450,138 @@ button.close {
     bottom: 0;
     left: 40%;
     z-index: -1;
-    @media @old {
+    @media @mobile {
       display: none;
+    }
+  }
+}
+.goods {
+
+  & .content__title {
+    padding-right: 70px;
+    padding-left: 40px;
+    margin-right: 10px;
+    margin-bottom: 45px;
+    @media @old {
+      margin-bottom: 20px;
+    }
+  }
+  &__holder {
+    margin-left: -50px;
+    position: relative;
+    @media @mobile {
+      margin-left: -35px;
+    }
+  }
+  &__other {
+    font-style: italic;
+    font-size: 16px;
+    color: #010101;
+    margin-bottom: 10px;
+    vertical-align: middle;
+    display: inline-block;
+    @media @old {
+      margin-bottom: 30px;
+      font-size: 14px;
+    }
+  }
+  &__img {
+    display: inline-block;
+    vertical-align: top;
+    width: 55%;
+    & img {
+      width: 130%;
+      max-width: 700px;
+      margin-bottom: 20px;
+    }
+    @media @mobile {
+      display: block;
+      width: 100%;
+      margin-bottom: 40px;
+    }
+  }
+  &__info {
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+    padding-left: 30px;
+    @media @mobile {
+      display: block;
+      width: 100%;
+      padding-left: 25px;
+    }
+    &-holder {
+      margin-bottom: 15px;
+      &_spec  .goods__line{
+        border: 1px solid @orange;
+        border-radius: 10px;
+        margin: -10px;
+        padding: 10px; 
+        display: inline-block;
+        & span {
+          display: inline-block;
+        }
+      }
+    } 
+    &-subtitle {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 20px;
+      color: @orange;
+      margin-left: -25px;
+      margin-bottom: 15px;
+      @media @mobile {
+        margin-left: 0;
+      }
+    }
+  }
+  &__conditions {
+    padding-left: 25px;
+    font-size: 13px;
+    line-height: 16px;
+    & span {
+      padding-left: 15px;
+      display: inline-block;
+    }
+  }
+  &__line {
+    font-size: 16px;
+    color: #010101;
+    line-height: 22px;
+    & b {
+      width: 150px;
+      float: left;
+      @media @old {
+        float: none;
+        display: block;
+      }
+    }
+    & span {
+      padding-left: 15px;
+      overflow: hidden;
+      display: block;
+      @media @old {
+        padding-left: 0;
+      }
+    }
+  }
+  &__btn {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    margin-right: -25px;
+    @media @mobile {
+      margin-right: -10px;
+      padding-left: 0;
+    }
+    & a,
+    & a:active {
+      font-size: 25px;
+      @media @old {
+        font-size: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
     }
   }
 }
