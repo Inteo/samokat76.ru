@@ -670,9 +670,9 @@ input[type='checkbox']:checked + label::after {
     outline: none !important;
   }
   &:active {
-    -webkit-box-shadow: 0 3px 4px 0 #000 inset;
-    -moz-box-shadow: 0 3px 4px 0 #000 inset;
-    box-shadow: 0 3px 4px 0 #000 inset;
+    -webkit-box-shadow: 0 3px 4px 0 rgba(12, 14, 16, 0.7) inset;
+    -moz-box-shadow: 0 3px 4px 0 rgba(12, 14, 16, 0.7) inset;
+    box-shadow: 0 3px 4px 0 rgba(12, 14, 16, 0.7) inset;
     background: -moz-linear-gradient(bottom, #cf5832 0%, #df8c44 100%);
     background: -webkit-gradient(bottom top, bottom top, color-stop(0%, #cf5832), color-stop(100%, #df8b44));
     background: -webkit-linear-gradient(bottom, #cf5832 0%,  #df8b44 100%);
@@ -3879,14 +3879,45 @@ button.close {
   margin-right: 25px;
 }
 .main {
-  width: 210px;
   background: #303133;
   position: fixed;
   height: 100%;
   top: 0;
+  z-index: 10;
   left: 0;
-  &__title {
-    margin-bottom: 85px;
+  &__holder {
+    width: 210px;
+    position: relative;
+    height: 100%;
+  }
+  @media @tablet {
+    overflow: hidden;
+    top: 90px;
+    max-width: 0;
+    padding-top: 30px;
+    .transition(max-width, .5s, ease);
+    &:after {
+      content: '';
+      width: 100%;
+      height: 10px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: -moz-linear-gradient(bottom, rgba(54, 55, 57, 0.0) 0%, #17181a 100%);
+      background: -webkit-gradient(bottom top, top top, color-stop(0%, rgba(54, 55, 57, 0.2)), color-stop(100%, #17181a));
+      background: -webkit-linear-gradient(bottom, rgba(54, 55, 57, 0.0) 0%,  #17181a 100%);
+      background: -o-linear-gradient(bottom, rgba(54, 55, 57, 0.0) 0%,  #17181a 100%);
+      background: -ms-linear-gradient(bottom, rgba(54, 55, 57, 0.0) 0%,  #17181a 100%);
+      background: linear-gradient(to top, rgba(54, 55, 57, 0.0) 0%,  #17181a 100%);
+    }
+  }
+  &_active {
+    max-width: 210px;
+  }
+  & .logo {
+    @media @tablet {
+      display: none;
+    }
   }
   &:before {
     content: '';
@@ -3917,6 +3948,35 @@ button.close {
     & a {
       text-decoration: underline;
     }
+    @media @tablet {
+      bottom: 90px;
+    }
+  }
+  & .callback {
+    display: none;
+    position: relative;
+    right: auto;
+    top: auto;
+    padding-left: 20px;
+    @media @old {
+      display: block;
+      margin-bottom: 15px;
+    }
+    &:before {
+      display: none;
+    }
+  }
+}
+.main-title {
+  margin-bottom: 85px;
+  padding-right: 280px;
+  @media @tablet {
+    padding-right: 0;
+    margin-bottom: 50px;
+  }
+  @media @old {
+    font-size: 30px;
+    line-height: 32px;
   }
 }
 .logo {
@@ -3924,6 +3984,9 @@ button.close {
   padding: 35px 10px 0;
   display: inline-block;
   vertical-align: top;
+  @media @old {
+    margin-bottom: 30px;
+  }
 }
 .main-menu {
   list-style: none;
@@ -3990,6 +4053,10 @@ button.close {
 }
 .wrap {
   padding: 0 0 0 210px;
+  min-width: 320px;
+  @media @tablet {
+    padding-left: 0;
+  }
 }
 .back {
   position: fixed;
@@ -3998,35 +4065,33 @@ button.close {
 .holder {
   padding: 75px 50px 50px;
   position: relative;
+  @media @mobile {
+    padding: 60px 35px 45px;
+  }
 }
 .content {
   background: #fff;
   border-radius: 10px;
   max-width: 950px;
-  padding: 110px 50px 30px;
+  padding: 25px 50px 30px;
   position: relative;
+  @media @mobile {
+    padding: 30px 35px 30px;
+  }
   &__title {
-    position: absolute;
-    top: 30px;
-    left: -12px;
-    padding: 5px 40px 8px 50px;
+    padding: 8px 50px 10px 35px;
     color: #fff;
     font-size: 25px;
     line-height: 36px;
-    background: @orange;
     letter-spacing: -.025em;
-    display: block;
-    background: -moz-linear-gradient(left, #cf5832 0%, #df8c44 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, #cf5832), color-stop(100%, #df8b44));
-    background: -webkit-linear-gradient(left, #cf5832 0%,  #df8b44 100%);
-    background: -o-linear-gradient(left, #cf5832 0%,  #df8b44 100%);
-    background: -ms-linear-gradient(left, #cf5832 0%,  #df8b44 100%);
-    background: linear-gradient(to right, #cf5832 0%,  #df8b44 100%);
-
-    -webkit-box-shadow: 0 12px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-    -moz-box-shadow: 0 12px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-    box-shadow: 0 12px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-
+    position: relative;
+    display: inline-block;
+    margin-left: -50px;
+    margin-bottom: 25px;
+    z-index: 1;
+    @media @mobile {
+      margin-left: -35px;
+    }
     &:before {
       position: absolute;
       content: '';
@@ -4034,9 +4099,35 @@ button.close {
       border-top: 12px solid #cf5832;
       border-bottom: none;
       border-right: none;
-      left: 0;
+      left: -12px;
       z-index: -1;
       top: 100%;
+    }
+    &:after {
+      position: absolute;
+      content: '';
+      background: @orange;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      left: -12px;
+      z-index: -1;
+      background: -moz-linear-gradient(left, #cf5832 0%, #df8c44 100%);
+      background: -webkit-gradient(left top, right top, color-stop(0%, #cf5832), color-stop(100%, #df8b44));
+      background: -webkit-linear-gradient(left, #cf5832 0%,  #df8b44 100%);
+      background: -o-linear-gradient(left, #cf5832 0%,  #df8b44 100%);
+      background: -ms-linear-gradient(left, #cf5832 0%,  #df8b44 100%);
+      background: linear-gradient(to right, #cf5832 0%,  #df8b44 100%);
+  
+      -webkit-box-shadow: 0 12px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+      -moz-box-shadow: 0 12px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+      box-shadow: 0 12px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    }
+    @media @old {
+      font-size: 20px;
+      line-height: 30px;
+      display: block;
+      margin-right: -47px;
     }
   }
   &__subtitle {
@@ -4051,11 +4142,27 @@ button.close {
     background: -o-linear-gradient(left, #e7e6e6 0%,  #e7e6e6 100%);
     background: -ms-linear-gradient(left, #e7e6e6 0%,  #e7e6e6 100%);
     background: linear-gradient(to right, #e7e6e6 0%,  #e7e6e6 100%);
+    @media @mobile {
+      margin: 0 -35px 15px;
+    }
+    @media @old {
+      font-size: 16px;
+      line-height: 18px;
+      padding: 20px 25px;
+      & i {
+        display: none;
+
+      }
+    }
   } 
   &__text {
     margin-bottom: 30px;
     & p {
       margin-bottom: 10px;
+    }
+    @media @old {
+      font-size: 16px;
+      line-height: 18px;
     }
   }
 }
@@ -4064,6 +4171,9 @@ button.close {
   right: 40px;
   top: 50px;
   padding-left: 70px;
+  @media @tablet {
+    display: none;
+  }
   &:before {
     position: absolute;
     content: '';
@@ -4091,11 +4201,17 @@ button.close {
 .preface {
   border-radius: 10px 0 0 10px;
   margin-right: -50px;
-  padding: 45px 50px 55px; 
-  background: #fff url(../../f/i/preface-back.png);
+  padding: 45px 50px 45px; 
+  background: #fff url(../../f/i/preface-back.png) 0 50% no-repeat;
   margin-bottom: 50px;
   position: relative;
   z-index: 1;
+  overflow: hidden;
+  @media @mobile {
+    padding: 45px 35px 55px;
+    margin-right: 0;
+    border-radius: 10px;
+  }
   &:before {
     content: '';
     position: absolute;
@@ -4110,34 +4226,147 @@ button.close {
     background: -ms-linear-gradient(left, rgba(255, 255, 255, 0.0) 0%, rgba(255, 255, 255, 0.7) 20%,  #fff 100%);
     background: linear-gradient(to right, rgba(255, 255, 255, 0.0) 0%, rgba(255, 255, 255, 0.7) 20%,  #fff 100%);
     z-index: -1;
+    @media @small {
+      display: none;
+    }
+  }
+  &__wrap {
+    display: table;
+    width: 100%;
+    @media @small {
+      display: block;
+    }
+  }
+  &__holder {
+    display: table-row;
+    width: 100%;
+    @media @small {
+      display: block;
+    }
   }
   &__info {
     width: 55%;
-    display: inline-block;
-    vertical-align: top;
+    display: table-cell;
+    @media @small {
+      width: 100%;
+      display: block;
+    }
   }
   &__title {
     font-weight: bold;
     font-size: 25px;
     line-height: 25px;
     margin-bottom: 15px;
+    @media @old {
+      font-size: 20px;
+      line-height: 24px;
+    }
     &-orange {
       color: @orange;
     }
     &-dotted {
-      border: 2px dotted #000;
+      border: 1px dashed #000;
       border-radius: 5px;
     }
   }
   &__text {
     padding-left: 20px;
     margin-bottom: 20px;
+    @media @mobile {
+      padding-left: 0;
+    }
+    @media @old {
+      font-size: 16px;
+      line-height: 18px;
+    }
   }
-  &__btn {
+  &__btn,
+  &__btn:active {
     margin-right: 20px;
+    vertical-align: top;
+    font-size: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 10px;
+    @media @old {
+      font-size: 18px;
+      line-height: 20px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
   &__hint {
     font-style: italic;
-
+    display: inline-block;
+    vertical-align: top;  
+    line-height: 32px;
+    margin-bottom: 10px;
+    @media @old {
+      font-size: 18px;
+      line-height: 20px;
+    }
+  }
+  &__img {
+    display: table-cell;
+    position: relative;
+    width: 45%;
+    @media @small {
+      display: none;
+    }
+    & img {
+      position: absolute;
+      left: 0;
+      bottom: -55px;
+    }
+  }
+}
+.header {
+  background: #303133;
+  height: 90px;
+  text-align: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 20px 25px;
+  display: none;
+  @media @tablet {
+    display: block;
+  }
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+  & .logo {
+    padding: 0;
+    @media @old {
+      margin-left: 0;
+    }
+    margin: -5px 0 0 -100px;
+  }
+  & .callback {
+    display: block;
+    top: 15px;
+    right: 25px; 
+    text-align: left;
+    padding: 0;
+    &:before {
+      display: none;
+    }
+    @media @old {
+      display: none;
+    }
+  }
+  &__ham {
+    float: left;
+    padding-top: 12px;
+    & a {
+      width: 35px;
+      height: 25px;
+      display: block;
+      background: url(../../f/i/icons.png) 0 -154px;
+    }
+    
   }
 }
