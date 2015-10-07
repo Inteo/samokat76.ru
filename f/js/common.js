@@ -16,7 +16,7 @@ $(document).ready(function(){
     maxWidth: 620,
     autoCenter: false,
     fitToView: false,
-    minWidth: 280,
+    minWidth: 320,
     scrolling   : 'no',
     helpers: {
       overlay: {

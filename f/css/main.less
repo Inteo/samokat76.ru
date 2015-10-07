@@ -3935,6 +3935,10 @@ textarea {
     & a:active {
       padding-left: 30px; 
       padding-right: 30px;
+      @media @old {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
     }
   }
   &__message {
@@ -4248,7 +4252,6 @@ textarea {
   }
 }
 .content {
-  overflow: hidden;
   background: #fff;
   border-radius: 10px;
   max-width: 950px;
@@ -4352,6 +4355,20 @@ textarea {
     @media @old {
       font-size: 16px;
       line-height: 18px;
+    }
+  }
+  &__hint {
+    font-style: italic;
+    overflow: hidden;
+    vertical-align: middle;
+    line-height: 20px;
+    @media @mobile {
+      display: block;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    @media @old {
+      font-size: 18px;
     }
   }
 }
@@ -4611,7 +4628,6 @@ textarea {
   }
 }
 .goods {
-
   & .content__title {
     padding-right: 70px;
     padding-left: 40px;
@@ -4624,6 +4640,7 @@ textarea {
   &__holder {
     margin-left: -50px;
     position: relative;
+    overflow: hidden;
     @media @mobile {
       margin-left: -35px;
     }
@@ -4835,6 +4852,92 @@ textarea {
       font-style: italic;
       right: auto;
       top :auto;
+    }
+  }
+}
+.service {
+  & .content__title {
+    margin-right: 10px;
+    padding-left: 40px;
+    padding-right: 70px;
+    float: left;
+    margin-bottom: 20px;
+  }
+  &__holder {
+    clear: both;
+    margin-bottom: -22px;
+  }
+  &__line {
+    padding-left: 25px;
+    padding-right: 25px;
+    margin: 0 -50px 22px;
+    @media @mobile {
+      margin: 0 -35px 15px;
+    }
+    min-height: 57px;
+    line-height: 57px;
+    overflow: hidden;
+    position: relative;
+    padding: 2px 25px 7px;
+    background: -moz-linear-gradient(left, #e8e6e6 60%, rgba(232, 230, 230, 0) 85%);
+    background: -webkit-gradient(left top, right top, color-stop(60%, #e8e6e6), color-stop(85%, rgba(232, 230, 230, 0)));
+    background: -webkit-linear-gradient(left, #e8e6e6 60%, rgba(232, 230, 230, 0) 85%);
+    background: -o-linear-gradient(left, #e8e6e6 60%,  rgba(232, 230, 230, 0) 85%);
+    background: -ms-linear-gradient(left, #e8e6e6 60%,  rgba(232, 230, 230, 0) 85%);
+    background: linear-gradient(to right, #e8e6e6 60%,  rgba(232, 230, 230, 0) 85%);
+    z-index: 1;
+    &:before {
+      content: '';
+      position: absolute;
+      border-top: 5px dotted #e8e7e7;
+      width: 100%;
+      height: 5px;
+      top: 0;
+      right: 90px;
+      bottom: 0;
+      margin: auto 0;
+      z-index: -1;
+    }
+    &_wide-value {
+      &:before {
+        right: 220px;
+      }
+    }
+    &_warn {
+      background: -moz-linear-gradient(left, #f0d5c0 60%, rgba(240, 213, 192, 0) 85%);
+      background: -webkit-gradient(left top, right top, color-stop(60%, #f0d5c0), color-stop(85%, rgba(240, 213, 192, 0)));
+      background: -webkit-linear-gradient(left, #f0d5c0 60%, rgba(240, 213, 192, 0) 85%);
+      background: -o-linear-gradient(left, #f0d5c0 60%,  rgba(240, 213, 192, 0) 85%);
+      background: -ms-linear-gradient(left, #f0d5c0 60%,  rgba(240, 213, 192, 0) 85%);
+      background: linear-gradient(to right, #f0d5c0 60%,  rgba(240, 213, 192, 0) 85%);
+      &:before {
+        border-top-color: #f0d5c0;
+        right: 160px; 
+      }
+    }
+  }
+  &__name {
+    width: 70%;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 25px;
+  }
+  &__value {
+    display: inline-block;
+    vertical-align: middle;
+    width: 30%;
+    text-align: right;
+    line-height: 25px;
+    font-weight: bold;
+    & span {
+      display: block;
+      font-weight: normal;
+    }
+  }
+  &__name,
+  &__value {
+    @media @old {
+      font-size: 16px;
     }
   }
 }
