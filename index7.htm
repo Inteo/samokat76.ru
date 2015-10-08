@@ -19,9 +19,25 @@
   <script src="f/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
   <script src="f/js/common.js"></script>
   <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
   <script>
+  	ymaps.ready(function () {
+    var myMap = new ymaps.Map('map', {
+	          center: [57.6423,39.8532],
+	          zoom: 16,
+	          controls: []
+	      }, {
+	          searchControlProvider: 'yandex#search'
+	      }),
+	      myPlacemark = new ymaps.Placemark([57.6423,39.8532]);
+	    	myMap.geoObjects.add(myPlacemark);
+		});
     $(document).ready(function(){
-      
+      $(".contacts__toggle a").click(function(){
+      	$(this).closest(".contacts").toggleClass("contacts_open");
+      	$(this).closest(".contacts").find(".contacts__toggle").show();
+      	$(this).closest(".contacts__toggle").hide();
+      });
     });
   </script>
 </head>
@@ -55,8 +71,8 @@
         <li class="main-menu__item"><a href="#"><span><i class="icon-car"></i></span>Наши автомобили</a></li>
         <li class="main-menu__item"><a href="#"><span><i class="icon-list"></i></span>Условия проката</a></li>
         <li class="main-menu__item"><a href="#"><span><i class="icon-man"></i></span>Гостевая книга</a></li>
-        <li class="main-menu__item main-menu__item_active"><p><span><i class="icon-star"></i></span>Сервис</p></li>
-        <li class="main-menu__item"><a href="#"><span><i class="icon-marker"></i></span>Контакты</a></li>
+        <li class="main-menu__item"><a href="#"><span><i class="icon-star"></i></span>Сервис</a></li>
+        <li class="main-menu__item main-menu__item_active"><p><span><i class="icon-marker"></i></span>Контакты</p></li>
       </ul>
       <p class="main__copyright">
         © 2015. <br>
@@ -67,11 +83,23 @@
     </div>
   </div>
   <div class="wrap">
-  	<div class="contacts">
+  	<div class="contacts contacts_open">
+  		<div id="map" class="contacts__map"></div>
 	    <div class="holder">
 	      <div class="content">
 	        <p class="content__title">Контакты</p>
-	    
+	        <div class="contacts__toggle"><a href="#">Свернуть</a></div>
+	        <div class="contacts__toggle contacts__toggle_close"><a href="#">Развернуть</a></div>
+	    		<div class="contacts__holder">
+	    			<p class="contacts__subtitle">Телефон:</p>
+		    		<p class="contacts__text">(4852) 333-553, (4852) 72-17-89 (многоканальный)</p>
+		    		<p class="contacts__subtitle">Адрес:</p>
+		    		<p class="contacts__text">Ярославль, проспект Октября, 73</p>
+		    		<p class="contacts__subtitle">График работы:</p>
+		    		<p class="contacts__text">9.00 – 19.00, ежедневно без выходных и обеда</p>
+		    		<p class="contacts__subtitle">E-mail:</p>
+		    		<p class="contacts__text">samokat76@yandex.ru</p>
+		    	</div>
 	      </div>
 	    </div>
     </div>
@@ -81,3 +109,11 @@
 
 
 
+
+  
+
+  
+
+  
+
+  

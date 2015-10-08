@@ -4522,7 +4522,8 @@ textarea {
   text-align: center;
   padding: 20px 25px;
   display: none;
-  min-width: 320px; 
+  min-width: 320px;
+  z-index: 10; 
   @media @tablet {
     display: block;
   }
@@ -4939,5 +4940,90 @@ textarea {
     @media @old {
       font-size: 16px;
     }
+  }
+}
+.contacts {
+  & .holder {
+    padding-top: 50px;
+  }
+  & .content {
+    display: inline-block;
+    max-width: auto;
+    padding-left: 25px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    -webkit-box-shadow: 0 17px 10px -15px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 17px 10px -15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 17px 10px -15px rgba(0, 0, 0, 0.5);
+  }
+  & .content__title {
+    margin-left: -25px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    @media @old {
+      margin-right: 0;
+      display: inline-block;
+      padding-right: 40px;
+      padding-left: 30px;
+    }
+  }
+  &__holder {
+    display: none;
+    padding-bottom: 40px;
+  }
+  &_open &__holder {
+    display: block;
+  }
+  &_open .content {
+    max-width: 480px;
+
+  }
+  &__map {
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    @media @tablet {
+      left: 0;
+      top: 90px;
+    }
+  }
+  &__subtitle {
+    font-weight: bold;
+    line-height: 25px;
+    @media @old {
+      font-size: 18px;
+      line-height: 20px;
+    }
+  }
+  &__text {
+    margin-bottom: 5px;
+    line-height: 25px;
+    padding-left: 10px;
+    @media @old {
+      font-size: 18px;
+      line-height: 20px;
+    }
+  }
+  &__toggle {
+    display: block;
+    line-height: 50px;
+    @media @old {
+      line-height: 40px;
+    }
+    &_close {
+      display: none;
+    }
+    & a {
+      font-size: 16px;
+      display: inline-block;
+      font-style: italic;
+      color: #010101;
+      line-height: 16px;
+      border-bottom: 1px dotted #000;
+    }
+    float: right;
   }
 }
