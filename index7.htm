@@ -31,6 +31,16 @@
 	      }),
 	      myPlacemark = new ymaps.Placemark([57.6423,39.8532]);
 	    	myMap.geoObjects.add(myPlacemark);
+        myMap.controls.add(new ymaps.control.SearchControl, {float: 'right'});
+        myMap.controls.add(new ymaps.control.GeolocationControl, {float: 'right'});
+        myMap.controls.add(new ymaps.control.RouteEditor, {float: 'right' });
+        myMap.controls.add('zoomControl', {
+          float: 'none',
+          position: {
+              right: 10,
+              top: 45
+          }
+        });
 		});
     $(document).ready(function(){
       $(".contacts__toggle a").click(function(){
